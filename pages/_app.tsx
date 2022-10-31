@@ -1,6 +1,16 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import Header from "../components/Header";
+import type { AppProps } from "next/app";
+import "../styles/globals.css";
+import {IKContext} from "imagekitio-react"
+import Footer from "../components/Footer";
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <IKContext urlEndpoint={process.env.NEXT_PUBLIC_IMAGEKIT_URLENDPOINT} publicKey={process.env.NEXT_PUBLIC_PUBLICAPIKEY} >
+    <div className="bg-backG  ">
+      <Header />
+      <Component {...pageProps} />
+      <Footer />
+    </div>
+    </IKContext>
+  );
 }
