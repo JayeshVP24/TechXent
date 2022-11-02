@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <IKContext urlEndpoint={process.env.NEXT_PUBLIC_IMAGEKIT_URLENDPOINT} publicKey={process.env.NEXT_PUBLIC_PUBLICAPIKEY} >
-    <div className="bg-backG  ">
+    <div >
       <Header />
       <Component {...pageProps} />
       <Footer />
